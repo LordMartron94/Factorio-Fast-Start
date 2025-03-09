@@ -72,7 +72,7 @@ local function give_items_to_player_through_chests(items)
 end
 
 local function give_items_to_player_through_chests_collection(items_collection)
-  for items in items_collection do
+  for _, items in ipairs(items_collection) do
     give_items_to_player_through_chests(items)
   end
 end
