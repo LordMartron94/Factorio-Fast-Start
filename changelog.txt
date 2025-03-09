@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 2024-07-29
+  Bugfixes:
+    - Fixed the fact that certain items would not spawn and ensured that items that do not spawn get printed to the console for debugging purposes.
+  Enhancements:
+    - Added a transport vehicle.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2024-01-18
+  Bugfixes:
+    - Fixed the fact that only the belts would arrive in inventory due to full inventory. Did this by changing the items to be placed in chests.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 2024-01-17
+  Optimizations:
+    - Changed the numbers of items to work with my starter base so I can have some production immediately.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2024-01-12
+  Major Features:
+    - Initial release (a way to skip boring entry level for Bobs/Angels)

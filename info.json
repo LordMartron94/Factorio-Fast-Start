@@ -1,0 +1,14 @@
+{
+  "name": "mrhoorn-fast-start",
+  "version": "1.0.3",
+  "title": "Mr. Hoorn's Fast Start",
+  "description": "A way to quickly get started on building the factory instead of boring entry level. Meant for Bobs and Angels.",
+  "author": "Mr. Hoorn",
+  "contact": "Discord: mr.hoornasp.learningexpert",
+  "factorio_version": "1.1",
+  "dependencies": [
+    "base >= 1.1.100",
+    "angelsrefining >= 0.12.6",
+    "bobplates >= 1.1.6"
+  ]
+}
