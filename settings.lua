@@ -7,4 +7,11 @@ data:extend({
     default_value = true,
     order = "a"
   },
+  {
+    type = "bool-setting",
+    name = "hoorn-enable-extended-fast-start",
+    setting_type = "startup",
+    default_value = false,
+    order = "b"
+  },
 })

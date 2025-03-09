@@ -41,7 +41,7 @@ local function place_item_nearby_player(item_name)
   return surface.create_entity({name=item_name, position=place_position, force="player"})
 end
 
-local function spawn_new_chest() 
+local function spawn_new_chest()
   return place_item_nearby_player("iron-chest")
 end
 
@@ -68,6 +68,12 @@ local function give_items_to_player_through_chests(items)
       global.hoorn_debug_string = global.hoorn_debug_string or {}
       table.insert(global.hoorn_debug_string, "Item Prototype for " .. item_name .. " does not exist.")
     end
+  end
+end
+
+local function give_items_to_player_through_chests_collection(items_collection)
+  for items in items_collection do
+    give_items_to_player_through_chests(items)
   end
 end
 
@@ -113,11 +119,30 @@ script.on_init(function (event)
   other_items = {
     {"car", 1}
   }
-  
-  give_items_to_player_through_chests(logistic_items)
-  give_items_to_player_through_chests(production_items)
-  give_items_to_player_through_chests(power_items)
-  give_items_to_player_through_chests(other_items)
+
+  give_items_to_player_through_chests_collection({logistic_items, production_items, power_items, other_items})
+
+  if (settings.startup["hoorn-enable-extended-fast-start"]) then
+    extended_logistics = {
+      {"transport-belt", 16000},
+      {"splitter", 700},
+      {"underground-belt", 1400},
+      {"iron-chest", 240}
+    }
+
+    extended_production = {
+      {"electric-mining-drill", 200},
+      {"inserter", 2000},
+      {"assembling-machine-1", 500},
+      {"ore-crusher", 200}
+    }
+
+    extended_power = {
+      {"small-electric-pole", 500}
+    }
+
+    give_items_to_player_through_chests_collection({extended_logistics, extended_production, extended_power})
+  end
 
   research_tech()
 end)
